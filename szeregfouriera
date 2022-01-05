@@ -1,0 +1,24 @@
+from sympy import *
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import quad
+
+p = 1.220
+T=2
+w=np.pi
+
+# Zadanie A
+
+
+def f(t):
+  return p*t**2
+
+def f1(t):
+  return f(t)*np.cos(w*t)
+
+def f2(t):
+  return f(t)*np.cos(2*w*t)
+
+a0=1/T*quad(f, -1, 1)[0]
+a1=2/T*quad(f1, -1, 1)[0]
+a2=2/T*quad(f2, -1, 1)[0]
